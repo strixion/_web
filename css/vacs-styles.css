@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Montserrat-Medium", "Arial", "sans-serif",
     "fonts/Montserrat-Medium.ttf";
-  background-color: #000;
+  background-color: #1b0818;
   color: #fff;
   overflow-x: hidden;
   font-family: Arial;
@@ -20,27 +20,25 @@ body::before {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-color: rgb(30, 2, 38);
+  background-color: #1b0818;
 }
 html {
   scroll-behavior: smooth;
 }
-
 header {
-  background-color: rgba(23, 23, 23, 1);
-  border-radius: 0px 0px 50px 50px;
-  padding: 15px;
-  z-index: 9999;
-  position: sticky;
   top: 0;
-  border-bottom-style: solid;
-  border-color: rgba(113, 113, 113, 0.3);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
 }
-
 nav {
+  background-color: rgba(0, 0, 0, 0.688);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 4px;
 }
 
 .logo {
@@ -103,30 +101,104 @@ nav {
   text-decoration: none;
 }
 
-.cta {
-  z-index: 99999;
-  background-color: #78c6ca;
-  padding: 25px 20px;
-  color: #fff;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.25s ease;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.cta:hover {
-  background-color: #379499;
-  border-radius: 15px;
-  transform: scale(0.95);
-  transition: 0.45s ease;
-}
-
 .main-section {
-  margin-top: 5%;
+  position: relative;
+  margin-top: 20%;
   border-radius: 2%;
   position: relative;
   width: 100%;
+  height: 400px;
+  background-color: rgba(61, 44, 65, 0.307);
+  justify-content: center;
+}
+.available-vacs {
+  gap: 2%;
+  position: relative;
+  display: flex;
+  top: 5%;
+  width: 200%;
   height: 500px;
-  background-color: #3c2804;
+  overflow-x: visible;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.vac-card {
+  border-radius: calc(1% + 15px);
+  background-color: rgb(124, 42, 120);
+  height: 80%;
+  width: max(10%, 200px);
+  text-align: center;
+  justify-content: center;
+  transition: ease-out 0.4s;
+}
+
+.role {
+  margin-top: 0;
+  font-size: xx-large;
+  filter: invert(100%);
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.line100 {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.half-cards {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  display: inline-block;
+  width: 100%;
+  height: 90%;
+  position: relative;
+  background-color: rgb(36, 23, 40);
+  top: -90%;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.vac-card p {
+  position: relative;
+  width: 100%;
+  filter: invert(100%);
+  top: 20%;
+}
+
+.vac-card:hover {
+  transform: translateY(-50%);
+}
+
+.half-cards a {
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: large;
+}
+
+.linktotg {
+  height: 10%;
+  width: 16%;
+  background-color: palevioletred;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  left: 42%;
+  border-radius: 8px;
+  transition: ease-in-out 0.3s;
+}
+
+.linktotg:hover {
+  background-color: rgb(147, 59, 88);
+  border-radius: 10px;
+  transform: scale(1.1);
 }

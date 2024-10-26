@@ -15,9 +15,14 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
+header {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
 nav {
-  background-color: rgba(0, 0, 0, 0.211);
+  background-color: rgba(0, 0, 0, 0.796);
   display: flex;
   align-items: center;
   justify-content: space-between;
