@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: "Montserrat-Medium", "Arial", "sans-serif",
+    "fonts/Montserrat-Medium.ttf";
+  background-color: #ff0000;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: Roboto;
+}
+:root {
+  --basic-height: 111%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: rgba(23, 23, 23, 1);
+  border-radius: 0px 0px 50px 50px;
+  padding: 15px;
+  z-index: 9999;
+  position: sticky;
+  top: 0;
+  border-bottom-style: solid;
+  border-color: rgba(113, 113, 113, 0.3);
+}
+
+nav {
+  background-color: #0048ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 12px 12px;
+}
+
+.logo {
+  z-index: 99999;
+  margin-left: 20px;
+  margin-right: auto;
+  transition: ease-in 2s;
+}
+
+.logo:active {
+  transform: scale(0.5);
+  transform: rotate(90deg);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 6;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10%;
+}
+
+.nav-links .nav-btn {
+  min-width: 119px;
+  max-width: 100%;
+  text-align: center;
+  display: inline-block;
+  flex-grow: 0;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.211);
+  justify-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  margin: 1px;
+  align-items: center;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.nav-links .nav-btn:hover {
+  border-radius: 18px;
+  transition: transform ease-in-out 0.2s background-color ease 0.3s;
+  background-color: rgba(0, 0, 0, 0.505);
+  transform: scale(1.1);
+}
+.nav-links .nav-btn:active {
+  border-radius: 1px;
+}
+
+.nav-links li a {
+  text-align: center;
+  margin: auto;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cta {
+  z-index: 99999;
+  background-color: #3d7d80;
+  padding: 25px 20px;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.cta:hover {
+  background-color: #4a8f93;
+  border-radius: 15px;
+  transform: scale(0.95);
+  transition: 0.45s ease;
+}
+
+body section {
+  background-color: wheat;
+  display: grid;
+  min-height: calc(256px * (16 / 9));
+  margin-top: 2%;
+  border-radius: 12px;
+  width: 100%;
+  margin-top: 2%;
+  height: 30%;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.vacs-descr {
+  display: grid;
+  columns: repeat(autp-fit, minmax(100px, 33%), auto-fit);
+}
+.members-descr {
+  align-items: center;
+}
+.members-descr img,
+.members-descr a {
+  position: relative;
+  top: 0;
+}
+.members-descr img {
+  left: 10%;
+  height: calc(100px + 20%);
+  align-self: center;
+  justify-self: center;
+}
+.vacs-descr img {
+  width: 90%;
+}
+.vacs-a-descr {
+  offset-distance: 10px;
+  font-size: xx-large;
+  filter: invert(100%);
+  left: 10%;
+  width: 80%;
+  filter: invert(100%);
+}
+.members-a-descr {
+  offset-distance: 10px;
+  font-size: xx-large;
+  filter: invert(100%);
+  left: 10%;
+  width: 80%;
+}
+.project-descr a,
+.project-descr img {
+  position: relative;
+  top: 0;
+}
+.project-a-descr {
+  offset-distance: 10px;
+  font-size: xx-large;
+  filter: invert(100%);
+  left: 10%;
+  width: 80%;
+}
+.test1 {
+  background-color: rgba(0, 0, 0, 0.196);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.286);
+  left: calc(50% - 128px);
+  transition: linear 0.5s;
+  animation-name: rotate-ai;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.test1:hover {
+  animation-play-state: paused;
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.344);
+  transform: scale(1.02);
+}
+.test1:active {
+  animation-play-state: paused;
+  filter: grayscale(100%);
+}
+
+@keyframes rotate-ai {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+}
