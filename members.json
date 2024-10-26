@@ -1,0 +1,37 @@
+{    
+    "member1":
+        {
+            "name": "Родион",
+            "surname": "Бушуев",
+            "job": "ТИМЛИД",
+            "img-url": "images/member1.png"
+        },
+    "member2":
+        {
+            "name": "Ксения",
+            "surname": "Попкова",
+            "job": "ДИЗАЙНЕР",
+            "img-url": "images/member2.png"
+        },
+    "member3":
+        {
+            "name": "Денис",
+            "surname": "Астапенко",
+            "job": "ФРОНТЕНД",
+            "img-url": "images/member3.jpg"
+        },
+    "member4":
+        {
+            "name": "Руслан",
+            "surname": "Маннанов",
+            "job": "БЭКЭНД",
+            "img-url": "images/member4.png"
+        },
+    "member5":
+        {
+            "name": "Дмитрий",
+            "surname": "Елькин",
+            "job": "МАРКЕТОЛОГ",
+            "img-url": "images/member5.png"
+        }
+}
