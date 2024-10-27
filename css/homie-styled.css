@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: "Montserrat-Medium", "Arial", "sans-serif",
+  font-family: "Stalinist One", "Raleway", "sans-serif",
     "fonts/Montserrat-Medium.ttf";
-  background-color: #ff0000;
+  background: linear-gradient(135deg, #111, #000);
   color: #fff;
   overflow-x: hidden;
   font-family: Roboto;
@@ -11,30 +11,27 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-:root {
-  --basic-height: 111%;
-}
 html {
   scroll-behavior: smooth;
+  font-family: "Stalinist One", "Raleway", "sans-serif";
 }
 
 header {
-  background-color: rgba(23, 23, 23, 1);
-  border-radius: 0px 0px 50px 50px;
-  padding: 15px;
-  z-index: 9999;
-  position: sticky;
   top: 0;
-  border-bottom-style: solid;
-  border-color: rgba(113, 113, 113, 0.3);
+  width: 100%;
+  position: sticky;
+  z-index: 999;
 }
 
 nav {
-  background-color: #0048ff;
+  background-color: rgba(0, 0, 0, 0.851);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0 0 12px 12px;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 4px;
+  position: relative;
 }
 
 .logo {
@@ -117,7 +114,7 @@ nav {
 }
 
 body section {
-  background-color: wheat;
+  background-color: rgba(131, 19, 161, 0.34);
   display: grid;
   min-height: calc(256px * (16 / 9));
   margin-top: 2%;
@@ -152,17 +149,21 @@ body section {
   width: 90%;
 }
 .vacs-a-descr {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: white;
   offset-distance: 10px;
   font-size: xx-large;
-  filter: invert(100%);
   left: 10%;
   width: 80%;
-  filter: invert(100%);
 }
 .members-a-descr {
+  color: white;
   offset-distance: 10px;
   font-size: xx-large;
-  filter: invert(100%);
   left: 10%;
   width: 80%;
 }
@@ -172,9 +173,9 @@ body section {
   top: 0;
 }
 .project-a-descr {
+  color: #ffffff;
   offset-distance: 10px;
   font-size: xx-large;
-  filter: invert(100%);
   left: 10%;
   width: 80%;
 }

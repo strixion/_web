@@ -103,7 +103,7 @@ nav {
 
 .main-section {
   position: relative;
-  margin-top: 20%;
+  margin-top: 10%;
   border-radius: 2%;
   position: relative;
   width: 100%;
@@ -112,44 +112,62 @@ nav {
   justify-content: center;
 }
 .available-vacs {
+  transform: translateX(-52%);
   gap: 2%;
   position: relative;
   display: flex;
   top: 5%;
   width: 200%;
   height: 500px;
-  overflow-x: visible;
   justify-content: center;
   justify-items: center;
   align-content: center;
   align-items: center;
 }
+#av-va {
+  animation-play-state: running;
+  animation: 30s sliding infinite cubic-bezier(0.33, 0.21, 0.67, 0.8);
+  transition: linear 0.3s;
+}
 .vac-card {
   border-radius: calc(1% + 15px);
   background-color: rgb(124, 42, 120);
   height: 80%;
-  width: max(10%, 200px);
-  text-align: center;
+  min-width: max(5%, 200px);
   justify-content: center;
+  text-align: center;
   transition: ease-out 0.4s;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.211);
 }
 
 .role {
   margin-top: 0;
-  font-size: xx-large;
+  font-size: 1.35rem;
   filter: invert(100%);
   position: relative;
-  top: 0;
-  width: 100%;
+  left: auto;
+  top: 1%;
+  bottom: 10%;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  width: fit-content;
 }
 
-.line100 {
+.va-descr {
+  position: relative;
+  border-radius: 1px 1px 0px 0px;
+  position: relative;
+  top: 11%;
   width: 100%;
-  height: 2px;
-  background-color: #000;
+  height: 70%;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #00000034;
 }
 
 .half-cards {
+  transition: linear 0.3s;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -161,20 +179,25 @@ nav {
   background-color: rgb(36, 23, 40);
   top: -90%;
   border-radius: 0px 0px 12px 12px;
+  box-shadow: 0px -1px 20px 0px black;
 }
 
 .vac-card p {
   position: relative;
   width: 100%;
   filter: invert(100%);
-  top: 20%;
+  top: 0%;
 }
 
 .vac-card:hover {
   transform: translateY(-50%);
 }
 
-.half-cards a {
+.needu a {
+  position: relative;
+  top: 0;
+  width: 10%;
+  height: 40px;
   justify-content: center;
   justify-items: center;
   align-content: center;
@@ -185,20 +208,176 @@ nav {
 }
 
 .linktotg {
-  height: 10%;
-  width: 16%;
-  background-color: palevioletred;
+  width: 10%;
+  left: 45%;
+  height: 50px;
+  background-color: rgb(124, 42, 120);
   text-align: center;
+  align-items: center;
+  align-content: center;
   justify-content: center;
   justify-items: center;
   position: relative;
-  left: 42%;
-  border-radius: 8px;
+  top: 0;
+  border-radius: 4px;
   transition: ease-in-out 0.3s;
 }
 
 .linktotg:hover {
-  background-color: rgb(147, 59, 88);
-  border-radius: 10px;
+  background-color: rgb(149, 70, 145);
+  border-radius: 8px;
   transform: scale(1.1);
+}
+.half-cards a {
+  position: relative;
+  top: 0;
+}
+
+.va-descr p {
+  position: relative;
+  top: 1%;
+  font-size: 1rem;
+}
+@keyframes sliding {
+  to {
+    transform: translateX(6%);
+  }
+}
+
+.needu {
+  position: relative;
+  left: 0;
+  top: 100px;
+  align-items: center;
+  text-align: center;
+  font-size: x-large;
+}
+
+.needu h2::after {
+  content: " вы";
+  font-weight: 900;
+  background-image: linear-gradient(50deg, #ffedc1, #f8e074);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.needu h4::after {
+  content: " по душе";
+  font-weight: 900;
+  background-image: linear-gradient(50deg, #c1fffd, #74e9f8);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.needu hr {
+  width: 30%;
+}
+
+footer {
+  margin-top: 30%;
+  bottom: 0;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+.statistic {
+  display: inline-block;
+  margin: 20px;
+}
+.statistic:hover .stat-number {
+  color: #ffdf00;
+}
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+@keyframes rotate-background {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 34, 93, 0.5), transparent);
+  animation: rotate-background 10s infinite linear;
+  z-index: -1;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  transition: ease-in 0.3s;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.form-group label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 12px;
+  color: #78c6ca;
 }

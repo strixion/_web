@@ -358,7 +358,7 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(102, 34, 93, 0.5), transparent);
+  background: radial-gradient(circle, rgb(255, 255, 255), rgb(255, 255, 255));
   animation: rotate-background 10s infinite linear;
   z-index: -1;
 }
