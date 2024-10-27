@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Наша Нейросеть</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <link rel="icon" href="images/web_logo.png" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="images/new_logo.png" alt="Логотип" width="98" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-btn">Главная</a></li>
+          <li><a href="strxai.html" class="nav-btn">Нейросеть</a></li>
+          <li><a href="vacs.html" class="nav-btn">Вакансии</a></li>
+          <li><a href="about_us.html" class="nav-btn">О команде</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Будущее ресторанной аналитики уже здесь</h1>
+        <p>Наша нейросеть поможет ресторанам принимать лучшие решения</p>
+        <a href="#ai" class="btn-main">Узнать больше</a>
+      </div>
+    </section>
+
+    <section id="ai" class="transparent-section">
+      <h2>Нейросеть для ресторанов</h2>
+      <div class="ai-features">
+        <div class="feature">
+          <h3>Рекомендации блюд</h3>
+          <p>Мы анализируем транзакции для рекомендаций блюд месяца.</p>
+        </div>
+        <div class="feature">
+          <h3>Оптимизация запасов</h3>
+          <p>Наша система поможет оптимизировать запасы товаров.</p>
+        </div>
+        <div class="feature">
+          <h3>Поддержка персонала</h3>
+          <p>
+            Помогаем ресторанному персоналу быть готовыми к любым изменениям.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сделать вложенные li ul ul -->
+    <div id="box-shadow-div" class="box-shadow-div"></div>
+    <section id="charts" class="transparent-section">
+      <h2>Аналитические графики</h2>
+
+      <ul class="chart-section">
+        <div class="chart-container">
+          <canvas id="canvas1" src="images/chart-1.png"> </canvas>
+          <div class="text-descr-chart">
+            <p>Рост обучения модели</p>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="canvas2" onclick="previewchart2()"> </canvas>
+          <div class="text-descr-chart">
+            <p>Точность нашей модели</p>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="canvas3" onclick="previewchart3()"> </canvas>
+          <div class="text-descr-chart">
+            <p>Распространение модели</p>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="canvas4" onclick="previewchart4()"> </canvas>
+          <div class="text-descr-chart">
+            <p>Довольные пользователи нейросети</p>
+          </div>
+        </div>
+      </ul>
+    </section>
+    <section id="project-description" class="transparent-section">
+      <h2>О проекте</h2>
+      <p>
+        Этот проект направлен на упрощение работы аналитиков в сфере ресторанов,
+        помогая им определять популярные блюда и тренды.
+      </p>
+    </section>
+
+    <section id="technologies" class="transparent-section">
+      <h2>Используемые технологии</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h3>Искусственный интеллект</h3>
+          <p>Автоматизация анализа данных.</p>
+        </div>
+        <div class="tech-item">
+          <h3>Python</h3>
+          <p>Главный язык разработки.</p>
+        </div>
+        <div class="tech-item">
+          <h3>Machine Learning</h3>
+          <p>Обучение моделей для рекомендаций.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="transparent-section">
+      <h2>Кейсы использования</h2>
+      <div class="case-grid">
+        <div class="case-item">
+          <h3>Определение блюда месяца</h3>
+          <p>Анализ предпочтений клиентов и сезонных трендов.</p>
+        </div>
+        <div class="case-item">
+          <h3>Рекомендации для закупок</h3>
+          <p>Подсказки по наиболее востребованным продуктам.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video-demo" class="transparent-section">
+      <h2>Видео демонстрация</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/your-video-id"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="success-stats" class="transparent-section">
+      <h2>Статистика успеха</h2>
+      <div class="stats-grid">
+        <div class="statistic">
+          <h2 class="stat-number" data-target="1500">0</h2>
+          <p id="welldone_projects">Успешных проектов</p>
+        </div>
+        <div class="statistic">
+          <h2 class="stat-number" data-target="120">1</h2>
+          <p id="kind-clients">Довольных клиентов</p>
+        </div>
+        <canvas id="successChart"></canvas>
+      </div>
+    </section>
+
+    <section id="demo-request" class="demo-request-section">
+      <h2>Запрос демоверсии</h2>
+      <!-- <form action="your-form-handler-url" method="post">
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="email" placeholder="Ваш email" required>
+    <textarea placeholder="Ваш запрос" rows="5" required></textarea>
+    <button type="submit">Отправить запрос</button>
+  </form> -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeWK0qxk-Ra3MmmStfCBHPBqooCz3tMPjfwJkvOte88gOBfvQ/viewform?embedded=true"
+        width="1000"
+        height="80%"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        paddingleft="4px"
+        paddingRight="4px"
+        >Loading…</iframe
+      >
+    </section>
+
+    <footer>
+      <p>&copy; 2024 StrixionAI. Все права защищены.</p>
+      <ul class="footer-links">
+        <li><a href="#">Политика конфиденциальности</a></li>
+        <li><a href="#">Условия использования</a></li>
+      </ul>
+    </footer>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="" alt="Фотография участника" id="modal-image" />
+        <h3 id="modal-name"></h3>
+        <p id="modal-role"></p>
+      </div>
+    </div>
+    <div id="bullet-cursor"></div>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
