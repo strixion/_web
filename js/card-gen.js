@@ -38,11 +38,11 @@ function addMember(nme, imgg, rolee) {
   div.setAttribute("data-img", imgg);
   div.setAttribute("data-role", rolee);
   div.innerHTML = `
-    <div class="card">
-        <img src=${rolee} alt=${nme}/>
-        <h3>${nme}</h3>
-    </div>
-    `;
+      <div class="card">
+          <img src=${rolee} alt=${nme}/>
+          <h3>${nme}</h3>
+      </div>
+      `;
   console.log(imgg);
   document.getElementById("people").appendChild(div);
 }

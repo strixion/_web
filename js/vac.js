@@ -1,4 +1,7 @@
 document.body.onload = MembersApp();
+setTimeout(function () {
+  document.body.classList.add("body_visible");
+}, 200);
 
 function MembersApp() {
   //список челов= [Роль      Описание          тип],
@@ -57,7 +60,7 @@ function addMember(role, descr, typ, ldescr) {
   div.setAttribute("class", "vac-card");
   div.setAttribute("data-role", role);
   div.setAttribute("data-descr", descr);
-  div.setAttribute("data-descr", ldescr);
+  div.setAttribute("data-ldescr", ldescr);
   div.setAttribute("data-typ", typ);
   div.innerHTML = `
         <a class="role">${role}</a>
@@ -68,3 +71,31 @@ function addMember(role, descr, typ, ldescr) {
   console.log(document.getElementById("available-vacs"));
   document.getElementById("av-va").appendChild(div);
 }
+const modal = document.getElementById("modal");
+const closeModal = document.querySelector(".close");
+const modalDescr = document.getElementById("modal-descr");
+const modalRole = document.getElementById("modal-role");
+
+function openModal(role, descr) {
+  modalRole.textContent = role;
+  modalDescr.textContent = descr;
+  modal.style.display = "flex";
+}
+function closeModalFunction() {
+  modal.style.display = "none";
+}
+
+closeModal.addEventListener("click", closeModalFunction);
+window.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    closeModalFunction();
+  }
+});
+
+document.querySelectorAll(".vac-card").forEach((member) => {
+  member.addEventListener("click", () => {
+    const role = member.getAttribute("data-role");
+    const descr = member.getAttribute("data-ldescr");
+    openModal(role, descr);
+  });
+});
