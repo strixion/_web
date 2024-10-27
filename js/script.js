@@ -25,6 +25,7 @@ window.addEventListener(
   },
   false
 );
+
 function randcol() {
   var_colors = [
     "#424242",

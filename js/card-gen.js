@@ -93,6 +93,7 @@ window.addEventListener(
   },
   false
 );
+
 function scrr() {
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   console.log(scrollTop);
