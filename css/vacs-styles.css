@@ -44,14 +44,14 @@ html {
   background-color: rgba(128, 58, 110, 0);
   -webkit-box-shadow: 0 0 100px 100px rgba(206, 155, 215, 0.5);
   box-shadow: 0 0 120px 120px rgba(210, 137, 207, 0.5);
-  z-index: 110;
+  z-index: 1;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 header {
   top: 0;
   width: 100%;
   position: fixed;
-  z-index: 999;
+  z-index: 2;
 }
 nav {
   background-color: rgba(0, 0, 0, 0.688);
