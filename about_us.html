@@ -52,14 +52,17 @@
       </div>
     </section>
 
-    <section class="section" height="1000px" width="100%">
+    <section class="section1" height="1000px" width="100%">
+      <div class="reviews-about">
+        <a>Что говорят о нас клиенты </a>
+      </div>
       <div class="reviews-stack">
         <div class="review-scroll">
           <div class="reviews">
             <div class="review">
               <div id="avatar">
                 <img
-                  src="/images/reviews/numero-uno-man-wtf-pinkman.png"
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
                   alt=""
                 />
               </div>
@@ -72,7 +75,7 @@
             <div class="review">
               <div id="avatar">
                 <img
-                  src="/images/reviews/numero-uno-man-wtf-pinkman.png"
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
                   alt=""
                 />
               </div>
@@ -85,7 +88,7 @@
             <div class="review">
               <div id="avatar">
                 <img
-                  src="/images/reviews/numero-uno-man-wtf-pinkman.png"
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
                   alt=""
                 />
               </div>
@@ -98,7 +101,7 @@
             <div class="review">
               <div id="avatar">
                 <img
-                  src="/images/reviews/numero-uno-man-wtf-pinkman.png"
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
                   alt=""
                 />
               </div>
@@ -111,7 +114,33 @@
             <div class="review">
               <div id="avatar">
                 <img
-                  src="/images/reviews/numero-uno-man-wtf-pinkman.png"
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
+                  alt=""
+                />
+              </div>
+              <a id="review-text"
+                >Благодарю за написание скрипта! Теперь выполняю рутинные задачи
+                не своими руками. Сделал быстро, просто, правки были приняты и
+                услышаны. Рекомендую к сотрудничеству</a
+              >
+            </div>
+            <div class="review">
+              <div id="avatar">
+                <img
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
+                  alt=""
+                />
+              </div>
+              <a id="review-text"
+                >Благодарю за написание скрипта! Теперь выполняю рутинные задачи
+                не своими руками. Сделал быстро, просто, правки были приняты и
+                услышаны. Рекомендую к сотрудничеству</a
+              >
+            </div>
+            <div class="review">
+              <div id="avatar">
+                <img
+                  src="./images/reviews/numero-uno-man-wtf-pinkman.png"
                   alt=""
                 />
               </div>
@@ -124,9 +153,7 @@
           </div>
         </div>
       </div>
-      <div class="reviews-about">
-        <a>Что говорят о нас клиенты </a>
-      </div>
+
     </section>
 
     <!-- Эта часть открывается по клику на карточки людей! -->
@@ -138,7 +165,48 @@
         <p id="modal-role"></p>
       </div>
     </div>
-    <div id="box-shadow-div"></div>
+    
+
+    <section id="success-stats" class="transparent-section">
+      <h2 class="statof">Статистика успеха</h2>
+      <div class="stats-grid">
+        <div class="statistic">
+          <h2 class="stat-number" data-target="1500">0</h2>
+          <p id="welldone_projects">Успешных проектов</p>
+        </div>
+        <div class="statistic">
+          <h2 class="stat-number" data-target="120">1</h2>
+          <p id="kind-clients">Довольных клиентов</p>
+        </div>
+        <canvas id="successChart"></canvas>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Связаться с нами</h2>
+      <p>
+        Остались вопросы? Напишите нам, и мы свяжемся с вами в ближайшее время.
+      </p>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <label for="name"></label>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Ваш Email" required></input>
+          <label for="email"></label>
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            placeholder="Ваше сообщение"
+            required
+          ></textarea>
+          <label for="message"></label>
+        </div>
+        <button type="submit" class="btn-submit">Отправить</button>
+      </form>
+    </section>
     <!-- <div id="bgsvg"></div> -->
     <footer>
       <p>&copy; 2024 StrixionAI. Все права защищены.</p>
@@ -147,7 +215,7 @@
         <li><a href="#">Условия использования</a></li>
       </ul>
     </footer>
-
+    <div id="box-shadow-div"></div>
     <script src="js/app.js"></script>
     <script src="js/card-gen.js" type="module"></script>
     <script src="js/script.js" type="module"></script>
