@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Вакансис</title>
-    <link rel="stylesheet" href="css/vacs-styles.css">  
+    <link rel="stylesheet" href="css/vacs-styles.css" />
 
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    
-    <link rel="icon" href="images/web_logo.png">
-</head>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <link rel="icon" href="images/web_logo.png" />
+  </head>
+  <body>
     <header>
-        <nav>
+      <nav>
         <div class="logo">
-            <img src="images/new_logo.png" alt="Логотип" width="98" onclick="to_home_page()">
+          <img
+            src="images/new_logo.png"
+            alt="Логотип"
+            width="98"
+            onclick="to_home_page()"
+          />
         </div>
-            <ul class="nav-links">
-                <li><a href="home.html" class="nav-btn">Главная</a></li>
-                <li><a href="index.html" class="nav-btn">Нейросеть</a></li>
-                <li><a href="vacs.html" class="nav-btn">Вакансии</a></li>
-                <li><a href="about_us.html" class="nav-btn">О команде</a></li>
-              </ul>
-        </nav>
+        <ul class="nav-links">
+          <li><a href="home.html" class="nav-btn">Главная</a></li>
+          <li><a href="index.html" class="nav-btn">Нейросеть</a></li>
+          <li><a href="vacs.html" class="nav-btn">Вакансии</a></li>
+          <li><a href="about_us.html" class="nav-btn">О команде</a></li>
+        </ul>
+      </nav>
     </header>
-    
+
     <div class="needu">
-        <h2>Возможно именно</h2>
-        <h3>нужны нам</h3>
-        <hr>
-        <h4>Осмотритесь и выберите занятие себе</h4>
-        <a href="https://t.me/strx_ceo"><div class="linktotg">Это же я!</div></a>
+      <h2>Возможно именно</h2>
+      <h3>нужны нам</h3>
+      <hr />
+      <h4>Осмотритесь и выберите занятие себе</h4>
+      <a href="https://t.me/strx_ceo"><div class="linktotg">Это же я!</div></a>
     </div>
     <!-- Вакансии -->
-    <div class="main-section" width="100%">  
-    
-        <div id="av-va" class="available-vacs" width="100%">
-        </div>
-        <div class="half-cards">
-        </div>
+    <div class="main-section" width="100%">
+      <div id="av-va" class="available-vacs" width="100%"></div>
+      <div class="half-cards">
+        <h1 display="Flex">▲ Нажмите на карточку ▲</h1>
+      </div>
+    </div>
 
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modal-role"></h3>
+        <p id="modal-descr"></p>
+      </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 StrixionAI. Все права защищены.</p>
-        <ul class="footer-links">
-          <li><a href="#">Политика конфиденциальности</a></li>
-          <li><a href="#">Условия использования</a></li>
-        </ul>
-      </footer>
-  
+      <p>&copy; 2024 StrixionAI. Все права защищены.</p>
+      <ul class="footer-links">
+        <li><a href="#">Политика конфиденциальности</a></li>
+        <li><a href="#">Условия использования</a></li>
+      </ul>
+    </footer>
+
     <script src="js/vac.js"></script>
-</body>
+  </body>
 </html>
