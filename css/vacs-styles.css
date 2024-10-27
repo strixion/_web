@@ -36,6 +36,17 @@ body::before {
 html {
   scroll-behavior: smooth;
 }
+#box-shadow-div {
+  width: 1px;
+  position: fixed;
+  height: 1px;
+  border-radius: 100%;
+  background-color: rgba(128, 58, 110, 0);
+  -webkit-box-shadow: 0 0 100px 100px rgba(206, 155, 215, 0.5);
+  box-shadow: 0 0 120px 120px rgba(210, 137, 207, 0.5);
+  z-index: 110;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
 header {
   top: 0;
   width: 100%;
