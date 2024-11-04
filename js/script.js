@@ -1,7 +1,15 @@
 document.body.onload = randcol();
 document.body.onload = ktrue();
-window.onscroll = scrr();
+document.body.onload = scrr();
 
+window.onscroll = scrr();
+setTimeout(function () {
+  document.body.classList.add("body_visible");
+}, 200);
+function scrr() {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  console.log(scrollTop);
+}
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
@@ -169,8 +177,3 @@ block.onmousemove = function (e) {
   item.style.left = e.clientX + -20 + "px";
   item.style.top = e.clientY + -20 + "px";
 };
-
-function scrr() {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  console.log(scrollTop);
-}

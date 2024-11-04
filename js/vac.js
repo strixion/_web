@@ -2,7 +2,16 @@ document.body.onload = MembersApp();
 setTimeout(function () {
   document.body.classList.add("body_visible");
 }, 200);
+document.body.onload = scrr();
 
+window.onscroll = scrr();
+setTimeout(function () {
+  document.body.classList.add("body_visible");
+}, 200);
+function scrr() {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  console.log(scrollTop);
+}
 function MembersApp() {
   //список челов= [Роль      Описание          тип],
   var members = [
