@@ -14,6 +14,13 @@ html {
   scroll-behavior: smooth;
   font-family: Verdana, sans-serif;
 }
+.body_hide {
+  opacity: 0;
+  transition: 0.9s opacity ease-in-out;
+}
+.body_visible {
+  opacity: 1;
+}
 #box-shadow-div {
   width: 1px;
   position: fixed;

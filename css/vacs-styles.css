@@ -20,6 +20,13 @@ body {
     background-position: 80% 0%;
   }
 }
+.body_hide {
+  opacity: 0;
+  transition: 0.9s opacity ease-in-out;
+}
+.body_visible {
+  opacity: 1;
+}
 body::before {
   background: linear-gradient(5deg, #1b0818, #2f023e);
   background-position: 0 0;

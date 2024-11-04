@@ -66,6 +66,28 @@ nav {
   margin-right: -10%;
 }
 
+.subsription {
+  display: flex;
+  position: relative;
+  left: auto;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: black;
+}
+
+.subsription table {
+  border-style: solid;
+  border-width: 2px;
+  border-color: wheat;
+}
+.subsription table thead {
+  margin-bottom: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .nav-links .nav-btn {
   min-width: 119px;
   max-width: 100%;
