@@ -9,6 +9,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-weight: 20px;
 }
 
 html {
@@ -74,20 +75,32 @@ nav {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  background-color: black;
+  background-color: rgba(44, 9, 44, 0.703);
 }
 
 .subsription table {
+  background-color: #46464642;
   border-style: solid;
-  border-width: 2px;
-  border-color: wheat;
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: 1.2em;
 }
 .subsription table thead {
-  margin-bottom: 1.75rem;
-  font-size: 1.5rem;
   font-weight: bold;
+  font-size: 100;
 }
 
+.subsription table tr th,
+.subsription table tr td {
+  background-color: #ff00d002;
+  border-style: solid;
+  border-radius: 12px;
+  border-color: transparent;
+}
+.subsription table tr {
+  height: 6em;
+  width: auto;
+}
 .nav-links .nav-btn {
   min-width: 119px;
   max-width: 100%;

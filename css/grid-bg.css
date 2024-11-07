@@ -28,6 +28,41 @@ body {
   z-index: -1;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
+
+.qr {
+  margin-top: 5%;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 12px;
+  width: 30%;
+  position: relative;
+  left: 35%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: #6c47622f;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  backdrop-filter: blur(10px);
+}
+.qr p {
+  margin-top: 0px;
+  position: relative;
+  top: 1em;
+  text-align: center;
+  font-size: 2em;
+}
+.qr img {
+  margin-top: 1.25em;
+  align-self: center;
+  width: 256px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.qr:hover .qr img {
+  transform: scale(1.01);
+}
 .logo {
   z-index: 99999;
   margin-left: 20px;
