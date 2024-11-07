@@ -178,14 +178,14 @@ body {
 }
 .card .teamus {
   filter: invert(100%);
-  width: 90%;
+  width: 80%;
   text-align: center;
   align-self: center;
 }
 
 .card .vacus {
   filter: invert(100%);
-  width: 90%;
+  width: 80%;
   text-align: center;
   align-self: center;
 }
