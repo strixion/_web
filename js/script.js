@@ -1,7 +1,7 @@
 document.body.onload = randcol();
 document.body.onload = ktrue();
 document.body.onload = scrr();
-
+document.body.onload = toggleTbody();
 window.onscroll = scrr();
 setTimeout(function () {
   document.body.classList.add("body_visible");
@@ -177,3 +177,16 @@ block.onmousemove = function (e) {
   item.style.left = e.clientX + -20 + "px";
   item.style.top = e.clientY + -20 + "px";
 };
+
+function toggleTbody() {
+  var tbody = document.getElementById("tbody");
+  var tfoot = document.getElementById("tfoot");
+  tbody.classList.toggle("hidden");
+  tfoot.classList.toggle("hidden");
+  tfoot.classList.toggle("showen");
+  tbody.classList.toggle("showen");
+}
+tippy("#thead", {
+  content: "Нажмите, чтобы раскрыть/скрыть таблицу",
+  placement: "bottom",
+});
