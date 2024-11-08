@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Наша Нейросеть</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://unpkg.com/tippy.js@6/dist/tippy.css" rel="stylesheet" />
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -14,6 +15,8 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
       crossorigin
     ></script>
+    <script src="https://unpkg.com/@popperjs/core@2" crossorigin></script>
+    <script src="https://unpkg.com/tippy.js@6" crossorigin></script>
 
     <link rel="icon" href="images/web_logo.png" />
   </head>
@@ -139,114 +142,112 @@
     <section id="video-demo" class="transparent-section">
       <h2>Видео демонстрация</h2>
       <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/your-video-id"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <video width="80%" controls>
+          <source src="images/cs-video.MP4" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+        But our AI is coming soon!
+        </video>
       </div>
     </section>
     <section class="subsription">
+      <p class="descr-subscr">Три уровня подписки</p>
       <table>
-        <tr
-          style="
-            font-size: larger;
-            border-bottom-style: solid;
-            border-bottom-width: 10px;
-            border-bottom-color: darkorchid;
-          "
-        >
-          <th>Функции</th>
-          <th>Пробная</th>
-          <th>Стандартная</th>
-          <th>Премиум</th>
-        </tr>
-        <tr>
-          <td>Анализ покупок</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Утверждение популярных/непопулярных блюд</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Предложения по цене и позиции блюда</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Анализ времени покупок</td>
-          <td>❌</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Анализ предпочтений клиентов</td>
-          <td>❌</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Составление клиентской базы</td>
-          <td>❌</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Добавление клиентской программы</td>
-          <td>❌</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Анализ конкурентов</td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Советы по взаимодействию с конкурентами</td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Анализ рекламных стратегий</td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Советы по оптимизации процессов</td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✔️</td>
-        </tr>
-        <tr
-          style="
-            background-color: #f5ff870f;
-            padding: 10px;
-            height: 7em;
-            line-height: 2em;
-            border-style: solid;
-            border-color: transparent;
-            border-radius: 12px;
-          "
-        >
-          <td>Цена</td>
-          <td>Бесплатно(месяц)</td>
-          <td>
-            14 999 руб./мес.<br />74 999 руб./6 мес.<br />139 999 руб./год
-          </td>
-          <td>
-            24 999 руб./мес.<br />124 999 руб./6 мес.<br />249 999 руб./год
-          </td>
-        </tr>
+        <thead id="thead" onclick="toggleTbody()">
+          <tr
+            style="
+              font-size: larger;
+              border-bottom-style: solid;
+              border-bottom-width: 10px;
+              border-bottom-color: darkorchid;
+            "
+          >
+            <th>Функции</th>
+            <th>Пробная</th>
+            <th>Стандартная</th>
+            <th>Премиум</th>
+          </tr>
+        </thead>
+        <tbody id="tbody" class="hidden">
+          <tr>
+            <td>Анализ покупок</td>
+            <td>✔️</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Утверждение популярных/непопулярных блюд</td>
+            <td>✔️</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Предложения по цене и позиции блюда</td>
+            <td>✔️</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Анализ времени покупок</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Анализ предпочтений клиентов</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Составление клиентской базы</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Добавление клиентской программы</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Анализ конкурентов</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Советы по взаимодействию с конкурентами</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Анализ рекламных стратегий</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Советы по оптимизации процессов</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+        <tfoot id="tfoot" class="hidden">
+          <tr>
+            <td>Цена</td>
+            <td>Бесплатно(месяц)</td>
+            <td>
+              14 999 руб./мес.<br />74 999 руб./6 мес.<br />139 999 руб./год
+            </td>
+            <td>
+              24 999 руб./мес.<br />124 999 руб./6 мес.<br />249 999 руб./год
+            </td>
+          </tr>
+        </tfoot>
+        </tbody>
       </table>
     </section>
     <section id="demo-request" class="demo-request-section">
@@ -288,6 +289,7 @@
     </div>
     <div id="bullet-cursor"></div>
     <script src="js/app.js"></script>
+
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -2,64 +2,101 @@
 const container = document.querySelector(".fixed-container");
 const firstText = document.querySelector(".first-text");
 const secondText = document.querySelector(".second-text");
-const maincontent = document.querySelector(".content");
+const maincontent = document.querySelector(".three-cards");
 maincontent.classList.toggle("fixed", true);
 
-let lastScrollTop = 0; // Переменная для хранения предыдущей позиции скролла
-
+let isScrolling = false;
+let lastScrollTop = 0;
 let checkpoint = false;
-// Функция для отслеживания положения скролла
-window.addEventListener("scroll", () => {
-  // Определяем текущую позицию скролла
-  const scrollPosition = window.scrollY || window.pageYOffset;
+let isAnimating = false; // Флаг для отслеживания состояния анимации
 
-  // Высота документа минус высота окна браузера
-  const documentHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
+// Функция для плавного скролла
+function smoothScrollTo(targetPosition, duration) {
+  const startPosition = window.scrollY;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
 
-  // Рассчитываем процент прокрутки
-  const scrollPercentage = (scrollPosition / documentHeight) * 100;
-
-  // Проверяем, достигли ли мы 33%
-  if (Math.floor(scrollPercentage) === 20) {
-    // Плавно прокручиваемся на 34%
-    window.scrollTo({
-      top: documentHeight * 0.201,
-      behavior: "smooth",
-    });
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+    else isAnimating = false; // Сброс флага после завершения анимации
   }
 
-  // Проверяем, достигли ли мы 66%
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
 
-  // Остальная логика остается без изменений
+  isAnimating = true; // Установка флага перед началом анимации
+  requestAnimationFrame(animation);
+}
+
+window.addEventListener("scroll", () => {
+  if (isScrolling || isAnimating) return; // Если уже происходит скролл или анимация, не выполняем дополнительные действия
+
+  isScrolling = true;
+
+  const scrollPosition = window.scrollY || window.pageYOffset;
+  const documentHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+  if (Math.floor(scrollPercentage) === 30) {
+    smoothScrollTo(documentHeight * 0.31, 500); // Плавный скролл на 31%
+  }
+
   if (
-    scrollPosition >= documentHeight * 0.2 &&
-    scrollPosition < documentHeight * 0.4
+    scrollPosition >= documentHeight * 0.3 &&
+    scrollPosition < documentHeight * 0.6
   ) {
-    // Скрыть первый текст и показать второй
     firstText.classList.remove("show");
     firstText.classList.add("hide");
     container.classList.toggle("gradient-size", false);
     secondText.classList.remove("hide");
     secondText.classList.add("show");
-  } else if (scrollPosition < documentHeight * 0.2) {
-    // Показать первый текст и скрыть второй
+  } else if (scrollPosition < documentHeight * 0.3) {
     firstText.classList.remove("hide");
     firstText.classList.add("show");
     container.classList.toggle("gradient-size", true);
     secondText.classList.remove("show");
     secondText.classList.add("hide");
   }
-  if (scrollPosition <= documentHeight * 0.4) {
+
+  if (scrollPosition <= documentHeight * 0.6) {
     container.classList.toggle("fade-out", false);
     container.classList.toggle("fade-in", true);
     maincontent.classList.toggle("fixed", true);
   } else {
+    if (!checkpoint) {
+      smoothScrollTo(maincontent.offsetTop, 500); // Плавный скролл к maincontent
+      checkpoint = true;
+    }
     container.classList.toggle("fade-in", false);
     container.classList.toggle("fade-out", true);
     maincontent.classList.toggle("fixed", false);
   }
+
+  setTimeout(() => {
+    isScrolling = false;
+  }, 100);
 });
+
+// Обработчик события wheel для плавного скролла
+document.addEventListener(
+  "wheel",
+  function (event) {
+    event.preventDefault();
+
+    const deltaY = event.deltaY / 3;
+    smoothScrollTo(window.scrollY + deltaY, 100); // Плавный скролл с замедлением
+  },
+  { passive: false }
+);
 
 window.onload = function () {
   window.scrollTo(0, 0);
@@ -98,4 +135,16 @@ window.addEventListener(
 function scrr() {
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   console.log(scrollTop);
+}
+
+// Функция для медленного скролла вниз
+function changeBoxShadow() {
+  const boxShadowDiv = document.getElementById("box-shadow-div");
+  boxShadowDiv.style.boxShadow = "0 0 60px 60px rgba(210, 137, 208, 0.1)";
+}
+
+function resetBoxShadow() {
+  const boxShadowDiv = document.getElementById("box-shadow-div");
+  // Сбросим box-shadow до первоначального значения
+  boxShadowDiv.style.boxShadow = ""; // Или любое другое начальное значение
 }

@@ -20,8 +20,8 @@
         <img src="images/new_logo.png" alt="Логотип" width="98" />
       </div>
       <ul class="nav-links">
-        <li><a href="home.html" class="nav-btn">Главная</a></li>
-        <li><a href="index.html" class="nav-btn">Нейросеть</a></li>
+        <li><a href="index.html" class="nav-btn">Главная</a></li>
+        <li><a href="strxai.html" class="nav-btn">Нейросеть</a></li>
         <li><a href="vacs.html" class="nav-btn">Вакансии</a></li>
         <li><a href="about_us.html" class="nav-btn">О команде</a></li>
       </ul>
@@ -35,15 +35,30 @@
     <div class="content">
       <p class="beautytext">Предлагаем ознакомиться</p>
       <div class="three-cards">
-        <div class="strxai card" onclick="location.href='strxai.html'">
+        <div
+          class="strxai card"
+          onclick="location.href='strxai.html'"
+          onmouseenter="changeBoxShadow()"
+          onmouseleave="resetBoxShadow()"
+        >
           <a>Нейросеть</a>
           <img src="pixelcut-export.png" class="strl" />
         </div>
-        <div class="aboutus card" onclick="location.href='about_us.html'">
+        <div
+          class="aboutus card"
+          onclick="location.href='about_us.html'"
+          onmouseenter="changeBoxShadow()"
+          onmouseleave="resetBoxShadow()"
+        >
           <a>О команде</a
           ><img src="images/team-svgrepo-com.svg" class="teamus" />
         </div>
-        <div class="vacs card" onclick="location.href='vacs.html'">
+        <div
+          class="vacs card"
+          onclick="location.href='vacs.html'"
+          onmouseenter="changeBoxShadow()"
+          onmouseleave="resetBoxShadow()"
+        >
           <a>Вакансии</a><img src="images/man-svgrepo-com.svg" class="vacus" />
         </div>
       </div>
