@@ -67,8 +67,19 @@ nav {
   margin-right: -10%;
 }
 
+.hidden {
+  transform: translateY(-100%);
+  display: none;
+  opacity: 0;
+}
+
+.showen {
+  transform: translateY(0%);
+  opacity: 1;
+}
 .subsription {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   position: relative;
   left: auto;
   align-content: center;
@@ -78,24 +89,107 @@ nav {
   background-color: rgba(44, 9, 44, 0.703);
 }
 
+.subsription p {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Расположите текст подсказки */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Исчезают в подсказке */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tippy-box {
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.tippy-arrow {
+  color: #333;
+}
 .subsription table {
+  width: 70%;
   background-color: #46464642;
   border-style: solid;
   border-radius: 12px;
   border-color: transparent;
   font-size: 1.2em;
 }
-.subsription table thead {
-  font-weight: bold;
-  font-size: 100;
+.subsription table thead tr th {
+  transition: 0.3s ease;
+  background-color: #5d406f02;
+  border-bottom: #4738505d solid 2px;
 }
 
+.subsription table thead tr th:hover {
+  background-color: #48315730;
+  border-bottom: #965eb75d solid 2px;
+}
+.subsription table thead tr th:hover + * {
+  background-color: #4831570f;
+  border-bottom: #965eb730 solid 2px;
+}
+.subsription table thead tr th:has(+ *:hover) {
+  background-color: #4831570f;
+  border-bottom: #965eb730 solid 2px;
+}
 .subsription table tr th,
 .subsription table tr td {
   background-color: #ff00d002;
   border-style: solid;
   border-radius: 12px;
   border-color: transparent;
+  width: 25%; /* Фиксированная ширина для ячеек <th> */
+}
+.subsription table tbody {
+  opacity: 1;
+  transition: 0.3s ease;
+  transform: translateY(0%);
+}
+
+#tfoot tr td {
+  transition: 0.3s ease;
+  background-color: #5d406f02;
+  border-top: #4738505d solid 2px;
+}
+#tfoot tr td:hover {
+  background-color: #48315730;
+  border-top: #965eb75d solid 2px;
+}
+#tfoot tr td:hover + * {
+  background-color: #4831570f;
+  border-top: #965eb730 solid 2px;
+}
+#tfoot tr td:has(+ *:hover) {
+  background-color: #4831570f;
+  border-top: #965eb730 solid 2px;
 }
 .subsription table tr {
   height: 6em;
@@ -620,10 +714,15 @@ section {
 }
 
 .transparent-section {
-  background: rgba(255, 255, 255, 0.1);
+  background-image: linear-gradient(
+    45deg,
+    rgba(112, 45, 159, 0.396),
+    rgba(137, 42, 169, 0.215)
+  );
   margin: 50px 0;
   text-align: center;
   border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 #canvas1,
 #canvas2,
@@ -705,7 +804,6 @@ h2 {
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
-  height: 0;
   overflow: hidden;
   max-width: 100%;
 }
